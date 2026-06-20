@@ -1,6 +1,6 @@
 # Trabalho Prático 2 — Gerenciador de Memória Virtual
 
-Este é o projeto-base para implementação de um simulador de gerência de memória virtual.
+Simulador de gerência de memória virtual implementado em C, desenvolvido como trabalho prático da disciplina de Sistemas Operacionais — PUC Minas Campus Betim.
 
 ## Estrutura
 
@@ -25,7 +25,16 @@ vm_manager/
 └── report/
 ```
 
-## Gerar arquivos comuns de entrada
+## Funcionalidades Implementadas
+
+- Tradução de endereços lógicos para físicos
+- Tabela de páginas com 256 entradas
+- TLB com 16 entradas e política de substituição FIFO
+- Tratamento de page faults com paginação por demanda
+- Substituição de páginas com LRU aproximado (algoritmo de Aging)
+- Estatísticas de page fault rate e TLB hit rate
+
+## Gerar arquivos de entrada
 
 Entre no diretório `data` e execute:
 
@@ -58,15 +67,3 @@ ou
 ```bash
 ./vm < data/addresses_location.txt
 ```
-
-## Observação
-
-As funções principais estão propositalmente incompletas e marcadas com `TODO`.
-Vocês devem implementar a lógica de:
-
-- Tradução de endereços;
-- Tabela de páginas;
-- TLB com FIFO;
-- Tratamento de page fault;
-- Substituição de páginas com LRU aproximado;
-- Estatísticas.
